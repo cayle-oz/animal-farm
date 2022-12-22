@@ -113,7 +113,8 @@ const commentsSlice = createSlice({
     },
     [__addComment.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
-      state.comments = [...payload];
+      console.log(payload);
+      state.comments = {...payload};
       console.log("fulfilled ", state.comments);
     },
     [__addComment.rejected]: (state, action) => {
